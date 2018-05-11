@@ -1,0 +1,11 @@
+{
+  "name": "DispatcherService",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Steve Thomas <steve@revl.ca>",
+  "private": true,
+  "dependencies": {
+    "geolib": "^2.0.24",
+    "ngine-node": "https://github.com/revl-ca/ngine-node"
+  }
+}

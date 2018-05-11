@@ -1,0 +1,148 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.1",
+    "title": "Manager Service",
+    "contact": {
+      "email": "steve@revl.ca"
+    }
+  },
+  "host": "us-east-1.app.local",
+  "paths": {
+    "/parties": {
+      "get": {
+        "tags": [
+          "managers"
+        ],
+        "summary": "Get all nearest parties",
+        "produces": [
+          "json"
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "managers"
+        ],
+        "summary": "Create a new party",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "json"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "device_id",
+            "type": "string",
+            "description": "A unique device ID",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/parties/{party_code}/participants": {
+      "get": {
+        "tags": [
+          "managers"
+        ],
+        "summary": "Get all participants from a party",
+        "produces": [
+          "json"
+        ],
+        "parameters": [
+          {
+            "name": "party_code",
+            "in": "path",
+            "description": "A unique party ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "managers"
+        ],
+        "summary": "Join a party",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "json"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "device_id",
+            "type": "string",
+            "description": "A unique device ID",
+            "required": true
+          },
+          {
+            "name": "party_code",
+            "in": "path",
+            "description": "A unique party ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "405": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/parties/{party_code}/participants/{device_id}": {
+      "delete": {
+        "tags": [
+          "managers"
+        ],
+        "summary": "Leave a party",
+        "produces": [
+          "json"
+        ],
+        "parameters": [
+          {
+            "name": "party_code",
+            "in": "path",
+            "description": "A unique party ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "device_id",
+            "in": "path",
+            "description": "A unique device ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

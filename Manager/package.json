@@ -1,0 +1,15 @@
+{
+  "name": "ManagerService",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Steve Thomas <steve@revl.ca>",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ngine-node": "https://github.com/revl-ca/ngine-node",
+    "sequelize": "^3.31.0",
+    "sequelize-cli": "^3.2.0",
+    "sqlite3": "^3.1.13",
+    "uuid": "^3.1.0"
+  }
+}

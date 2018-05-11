@@ -1,0 +1,48 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.1",
+    "title": "Dispatcher Service",
+    "contact": {
+      "email": "steve@revl.ca"
+    }
+  },
+  "host": "dispatcher.app.local",
+  "paths": {
+    "/managers/find": {
+      "get": {
+        "tags": [
+          "managers"
+        ],
+        "summary": "Finds the nearest manager by coord",
+        "produces": [
+          "html"
+        ],
+        "parameters": [
+          {
+            "name": "lat",
+            "in": "query",
+            "description": "Latitude",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "lng",
+            "in": "query",
+            "description": "Longitude",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The Manager url"
+          },
+          "404": {
+            "description": "Manager not found"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - 80:80
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  dispatcher:
+    image: app/dispatcher
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      VIRTUAL_HOST: dispatcher.app.local
+
+  us-east-1:
+    image: app/manager
+    environment:
+      VIRTUAL_HOST: us-east-1.app.local
+      REGION: us-east-1 
+
+  ca-central-1:
+    image: app/manager
+    environment:
+      VIRTUAL_HOST: ca-central-1.app.local
+      REGION: ca-central-1 
+
+  eu-central-1:
+    image: app/manager
+    environment:
+      VIRTUAL_HOST: eu-central-1.app.local
+      REGION: eu-central-1
